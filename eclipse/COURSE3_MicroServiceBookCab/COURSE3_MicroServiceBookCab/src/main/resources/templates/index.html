@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home - Book a Cab</title>
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+    <header>
+        <h1>Welcome to Book a Cab</h1>
+        <nav>
+            <ul>
+                <li><a th:href="@{/bookcabAdd}">Book a Cab</a></li>
+                <li><a th:href="@{/cabfareGo}">Check Cab Fare</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <p>Book a cab with ease. Choose your ride, and enjoy a comfortable journey.</p>
+    </main>
+    <footer>
+        <p>&copy; 2024 paulodm.</p>
+    </footer>
+</body>
+</html>

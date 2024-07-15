@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Check Cab Fare</title>
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+    <header>
+        <h1>Check Cab Fare</h1>
+       
+    </header>
+    <main>
+
+    
+        <form action="cabfare" th:object="${booking}" method="post">
+            <label for="fromBooking">Pickup Location:</label>
+            <input type="text" id="fromBooking" name="fromBooking" th:field="*{fromBooking}" required />
+
+            <label for="toBooking">Drop-off Location:</label>
+            <input type="text" id="toBooking" name="toBooking" th:field="*{toBooking}" required />
+            
+            <label for="typeofcab">Type of cab:</label>
+	        <select id="typeofcab" name="typeofcab" th:field="*{typeofcab}">
+	            <option value="taxi">Taxi</option>
+	            <option value="uber">Uber</option>
+	        </select>
+
+            <button type="submit">Get Fare Estimate</button>
+        </form>
+
+        <div th:if="${fareEstimate != null}">
+            <p>Estimated Fare: <span th:text="${fareEstimate}"></span></p>
+        </div>
+    </main>
+    
+    
+    
+    
+    
+    
+    
+    <footer>
+        <p>&copy; 2024 paulodm.</p>
+    </footer>
+</body>
+</html>

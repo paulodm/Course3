@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Book a Cab</title>
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+    <header>
+        <h1>Book a Cab</h1>
+       
+    </header>
+    <main>
+        <form action="bookcab" th:object="${booking}" method="post">
+            <label for="fromBooking">Pickup Location:</label>
+            <input type="text" id="fromBooking"  name="fromBooking" th:field="*{fromBooking}" required />
+
+            <label for="toBooking">Drop-off Location:</label>
+            <input type="text" id="toBooking" name="toBooking" th:field="*{toBooking}" required />
+            
+            
+            
+            <label for="typeofcab">Type of cab:</label>
+	        <select id="typeofcab" name="typeofcab" th:field="*{typeofcab}">
+	            <option value="taxi">Taxi</option>
+	            <option value="uber">Uber</option>
+	        </select>
+            
+            
+            
+            
+            
+             <label for="emailid">Email ID:</label>
+        	<input type="email" id="emailid" name="emailid" th:field="*{emailid}" required />
+
+            <button type="submit">Book Now</button>
+        </form>
+    </main>
+    <br>
+    <span th:text ="${msg}"></span>
+
+    
+    
+    
+    <footer>
+        <p>&copy; 2024 paulodm.</p>
+    </footer>
+</body>
+</html>
